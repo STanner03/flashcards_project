@@ -13,7 +13,6 @@ function App() {
 
   useEffect(() => {
     getAllCollections();
-    // getAllCards();
   }, []);
 
   async function getAllCollections(){
@@ -21,22 +20,21 @@ function App() {
     setCollections(promise.data);
   };
 
-  // function getAllCards(){
-  //   let response = 
-  // }
-
   async function addNewCollection(collection){
-    let tempCollections = await axios.post('http://127.0.0.1:8000/api/collections/', collection)
-    // [collection, ...collections]
-    ;
+    let tempCollections = await axios.post('http://127.0.0.1:8000/api/collections/', collection);
     setCollections(tempCollections.data);
     getAllCollections();
   };
+  
+  async function getCardsForCollection(id){
+    let response = await axios.get('http://127.0.0.1:8000/api/collections/' + id + '/cards/');
+    setCards(response.data);
+  }
 
   return (
     <div>
       <Header />
-      <MainView collections={collections} setCollections={addNewCollection} cards={cards} setCards={setCards} />
+      <MainView collections={collections} setCollections={addNewCollection} cards={cards} collectionCards={getCardsForCollection} setCards={setCards} />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import Card from "../Card/Card";
 
-const CardViewer = () => {
+const CardViewer = (collectionCards) => {
     return ( 
         <div>
-            <Card />
+            <Card collectionCards={collectionCards} />
         </div>
      );
 }

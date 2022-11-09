@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CreateCardForm from "../CreateCardForm/CreateCardForm";
 
-const Card = () => {
+const Card = (collectionCards) => {
 
     // function handleClick()
 

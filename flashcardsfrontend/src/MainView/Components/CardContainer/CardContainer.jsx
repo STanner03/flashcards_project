@@ -1,10 +1,10 @@
 import AddNewCollectionForm from "../AddNewCollectionForm/AddNewCollectionForm";
 import CardViewer from "../CardViewer/CardViewer";
 
-const CardContainer = () => {
+const CardContainer = (collectionCards) => {
     return ( 
         <div>
-            <CardViewer />
+            <CardViewer collectionCards={collectionCards} />
         </div>
      );
 }

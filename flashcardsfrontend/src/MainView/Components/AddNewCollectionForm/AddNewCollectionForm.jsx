@@ -19,7 +19,7 @@ const AddNewCollectionForm = ({setCollections}) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <input type='text' value={title} onChange={handleTitle} />
+            <input type='text' placeholder="Collection Title" value={title} onChange={handleTitle} />
             <button type="submit">Create Collection</button>
         </form>
      );
