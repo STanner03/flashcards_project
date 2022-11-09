@@ -1,17 +1,14 @@
+import React, { useState } from 'react';
 import CardContainer from "./Components/CardContainer/CardContainer";
 import CollectionMenu from "./Components/CollectionMenu/CollectionMenu";
 
-const MainView = (props) => {
-  const [collections, setCollections] = useState([
-    { title: "Flutter" },
-    { title: "CSS" },
-  ]);
-  const [cards, setCards] = useState([]);
+const MainView = ({collections, setCollections, cards, setCards}) => {
+
 
   return (
     <div>
-      <CollectionMenu />
-      <CardContainer />
+      <CollectionMenu collections={collections} setCollections={setCollections} />
+      <CardContainer cards={cards} />
     </div>
   );
 };
