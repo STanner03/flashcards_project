@@ -5,7 +5,7 @@ const Collection = ({tempCollectionData, collectionCards, openCardContainer, set
     function handleClick() {
         collectionCards(tempCollectionData.id);
         setCollectionData(tempCollectionData);
-        openCardContainer()
+        // openCardContainer()
 
     };
     // console.log(collection)

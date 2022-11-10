@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreateCardForm from "../CreateCardForm/CreateCardForm";
 
-const Card = ({cards, cardData, createNewCard, i }) => {
+const Card = ({i, a, cardData, createNewCard}) => {
 
     const [display, setDisplay] = useState(cardData.word)
+
+    useEffect(() => {
+        setDisplay(cardData.word);
+    }, [])
 
     function handleClick(){
         if (display === cardData.word) {
@@ -27,7 +31,7 @@ const Card = ({cards, cardData, createNewCard, i }) => {
             <button onClick={handleAddCard} >Add New Card</button>
             <button onClick={handleEditCard} >Edit Card</button>
             <div>{display}</div>
-            <a>{i} of {cards.length}</a>
+            <a>{i} of {a.length}</a>
         </div>
      );
 }

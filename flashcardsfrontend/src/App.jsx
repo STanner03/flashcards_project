@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     getAllCollections();
-  }, []);
+  }, [setCollections]);
 
   async function getAllCollections(){
     let promise = await axios.get('http://127.0.0.1:8000/api/collections/');
