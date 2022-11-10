@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Collection = ({tempCollectionData, collectionCards, openCardContainer, setCollectionData}) => {
+const Collection = ({
+  tempCollectionData,
+  collectionCards,
+  openCardContainer,
+  setCollectionData,
+}) => {
+  function handleClick() {
+    // collectionCards(tempCollectionData.id);
+    setCollectionData(tempCollectionData);
+    // openCardContainer()
+  }
+  // console.log(collection)
 
-    function handleClick() {
-        collectionCards(tempCollectionData.id);
-        setCollectionData(tempCollectionData);
-        // openCardContainer()
+  return (
+    <h3 onClick={handleClick}>
+      {tempCollectionData.id}
+      {tempCollectionData.title}
+    </h3>
+  );
+};
 
-    };
-    // console.log(collection)
-
-    return ( 
-            <h3 onClick={handleClick}>
-                {tempCollectionData.id}
-                {tempCollectionData.title}
-            </h3>
-     );
-}
- 
 export default Collection;
