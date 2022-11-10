@@ -29,8 +29,10 @@ function App() {
   async function getCardsForCollection(id){
     let response = await axios.get('http://127.0.0.1:8000/api/collections/' + id + '/cards/');
     setCards(response.data);
+    console.log(id)
   }
 
+  console.log(cards)
   return (
     <div>
       <Header />

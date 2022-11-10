@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 
 const CreateCardForm = () => {
     
-    const [name, setName] = useState('');
+    const [word, setWord] = useState('');
     const [definition, setDefinition] = useState('');
 
     function handleSubmit(e){
         e.preventDefault();
         let newCard = {
-            name: name,
+            word: word,
             definition: definition
         };
-        setName("")
+        setWord("")
         setDefinition("")
     };
 
-    const handleName = e => setName(e.target.value);
+    const handleWord = e => setWord(e.target.value);
     const handleDefinition = e => setDefinition(e.target.value);
     
     return ( 
         <div onClick={handleSubmit}>
-            <input type="text" placeholder='Name of Card' value={name} onChange={handleName} />
-            <input type="text" placeholder='Description of Card' value={definition} onChange={handleDefinition} />
+            <input type="text" placeholder='Word on Card' value={word} onChange={handleWord} />
+            <input type="text" placeholder='Description of Word' value={definition} onChange={handleDefinition} />
             <button type="submit">Create Card</button>
         </div>
      );

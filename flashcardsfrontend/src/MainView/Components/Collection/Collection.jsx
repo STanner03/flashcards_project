@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 
-const Collection = (collection, cards) => {
+const Collection = ({collectionData, collectionCards, openCardContainer}) => {
 
     function handleClick() {
-        cards.getCardsForCollection(collection.collectionData.id)
+        collectionCards(collectionData.id);
+        openCardContainer()
+
     };
     // console.log(collection)
 
     return ( 
             <h3 onClick={handleClick}>
-                {collection.collectionData.id}
-                {collection.collectionData.title}
+                {collectionData.id}
+                {collectionData.title}
             </h3>
      );
 }

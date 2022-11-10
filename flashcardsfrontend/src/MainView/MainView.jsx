@@ -4,11 +4,14 @@ import CollectionMenu from "./Components/CollectionMenu/CollectionMenu";
 
 const MainView = ({collections, setCollections, cards, collectionCards, setCards}) => {
 
+    function openCardContainer(){
+        <CardContainer cards={cards} />
+    }
 
   return (
     <div>
-      <CollectionMenu collections={collections} setCollections={setCollections} collectionCards={collectionCards} />
-      <CardContainer collectionCards={collectionCards} />
+      <CollectionMenu collections={collections} setCollections={setCollections} collectionCards={collectionCards} openCardContainer={openCardContainer} />
+        <CardContainer cards={cards} />
     </div>
   );
 };
