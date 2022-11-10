@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const CreateCardForm = ({createNewCard}) => {
     
-    const [word, setWord] = useState('');
-    const [definition, setDefinition] = useState('');
+    const [word, setWord] = useState(createNewCard.word);
+    const [definition, setDefinition] = useState(createNewCard.definition);
 
     function handleSubmit(e){
         e.preventDefault();

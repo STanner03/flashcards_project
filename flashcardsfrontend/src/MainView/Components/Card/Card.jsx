@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CreateCardForm from "../CreateCardForm/CreateCardForm";
 
-const Card = ({cardData, createNewCard}) => {
+const Card = ({cards, cardData, createNewCard, i }) => {
 
     const [display, setDisplay] = useState(cardData.word)
 
@@ -27,6 +27,7 @@ const Card = ({cardData, createNewCard}) => {
             <button onClick={handleAddCard} >Add New Card</button>
             <button onClick={handleEditCard} >Edit Card</button>
             <div>{display}</div>
+            <a>{i} of {cards.length}</a>
         </div>
      );
 }

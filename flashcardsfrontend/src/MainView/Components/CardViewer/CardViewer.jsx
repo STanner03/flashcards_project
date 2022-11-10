@@ -2,8 +2,10 @@ import Card from "../Card/Card";
 
 const CardViewer = ({cards, createNewCard}) => {
 
+    let i = 0;
     const allCards = cards.map((cardObj) => (
-        <Card cardData={cardObj} createNewCard={createNewCard} />
+        i += 1,
+        <Card cards={cards} cardData={cardObj} createNewCard={createNewCard} i={i} />
     ));
 
     return ( 
