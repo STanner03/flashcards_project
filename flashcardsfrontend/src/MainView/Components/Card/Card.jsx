@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import CreateCardForm from "../CreateCardForm/CreateCardForm";
 
-const Card = ({cards}) => {
+const Card = ({cardData, createNewCard}) => {
 
-    // function handleClick()
+    function handleClick(){
+        
+    }
 
     return ( 
-        <div>
-            <CreateCardForm />
+        <div onClick={handleClick}>
+            <h4>{cardData.word}</h4>
+            <p>{cardData.definition}</p>
+            <CreateCardForm createNewCard={createNewCard} />
         </div>
      );
 }

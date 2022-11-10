@@ -3,10 +3,10 @@ import AddNewCollectionForm from "../AddNewCollectionForm/AddNewCollectionForm";
 import React, { useState } from 'react';
 
 
-const CollectionMenu = ({collections, setCollections, collectionCards, openCardContainer}) => {
+const CollectionMenu = ({collections, setCollections, collectionCards, openCardContainer, setCollectionData}) => {
 
     const allCollections = collections.map((collection) => (
-        <Collection collectionData={collection} collectionCards={collectionCards} openCardContainer={openCardContainer} />
+        <Collection tempCollectionData={collection} collectionCards={collectionCards} openCardContainer={openCardContainer} setCollectionData={setCollectionData} />
     ));
 
   return (

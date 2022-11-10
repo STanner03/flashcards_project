@@ -1,9 +1,15 @@
 import Card from "../Card/Card";
 
-const CardViewer = ({cards}) => {
+const CardViewer = ({cards, createNewCard}) => {
+
+    const allCards = cards.map((cardObj) => (
+        <Card cardData={cardObj} createNewCard={createNewCard} />
+    ));
+
     return ( 
         <div>
-            <Card cards={cards} />
+            {allCards}
+            {/* <Card cards={cards} createNewCard={createNewCard} /> */}
         </div>
      );
 }
