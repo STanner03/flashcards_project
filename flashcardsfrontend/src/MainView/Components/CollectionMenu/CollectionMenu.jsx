@@ -1,18 +1,19 @@
-import Collection from "../Collection/Collection";
-import AddNewCollectionForm from "../AddNewCollectionForm/AddNewCollectionForm";
+import Collection from "./Collection/Collection";
+import AddNewCollectionForm from "./AddNewCollectionForm/AddNewCollectionForm";
 import React, { useState } from "react";
 
 const CollectionMenu = ({
   collections,
-  setCollections,
-  collectionCards,
+  addNewCollection,
+  getCardsForCollection,
   openCardContainer,
   setCollectionData,
 }) => {
-  const allCollections = collections.map((collection) => (
+  const allCollections = collections.map((collection, i) => (
     <Collection
-      tempCollectionData={collection}
-      collectionCards={collectionCards}
+      key={i}
+      collection={collection}
+      getCardsForCollection={getCardsForCollection}
       openCardContainer={openCardContainer}
       setCollectionData={setCollectionData}
     />
@@ -21,7 +22,7 @@ const CollectionMenu = ({
   return (
     <div>
       {allCollections}
-      <AddNewCollectionForm setCollections={setCollections} />
+      <AddNewCollectionForm addNewCollection={addNewCollection} />
     </div>
   );
 };
