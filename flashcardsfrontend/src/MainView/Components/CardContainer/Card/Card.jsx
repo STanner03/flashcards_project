@@ -1,7 +1,8 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CreateCardForm from "../CreateCardForm/CreateCardForm";
 
-const Card = ({ i, a, cardData, createNewCard, deleteCard }) => {
+const Card = ({ i, a, cardData, setShowCardForm, setCardFormTitle }) => {
   const [display, setDisplay] = useState(cardData.word);
 
   useEffect(() => {
@@ -17,14 +18,21 @@ const Card = ({ i, a, cardData, createNewCard, deleteCard }) => {
   }
 
   function handleAddCard() {
-    <CreateCardForm createNewCard={createNewCard} title={"Add New Card"} />;
+    setShowCardForm(true)
+    setCardFormTitle('New Card')
   }
 
   function handleEditCard() {
     <CreateCardForm cardData={cardData} title={"Edit Card"} />;
   }
 
-  const handleDeleteCard = () => deleteCard();
+  function handleDeleteCard() {
+    async function deleteCard() {
+      let alteredCardList = await axios.delete(
+        "http://127.0.0.1:8000/api/collections/" + 5 + "/cards/" + 11 + "/"
+      );
+    }
+  }
 
   return (
     <div onClick={handleClick}>

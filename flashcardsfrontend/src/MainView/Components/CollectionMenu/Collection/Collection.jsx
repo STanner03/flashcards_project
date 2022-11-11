@@ -4,11 +4,11 @@ const Collection = ({
   collection,
   getCardsForCollection,
   openCardContainer,
-  setCollectionData,
+  setActiveCollectionData,
 }) => {
   function handleClick() {
-    setCollectionData(collection);
-    openCardContainer();
+    setActiveCollectionData(collection);
+    // openCardContainer();
   }
 
   return <h3 onClick={handleClick}>{collection.title}</h3>;

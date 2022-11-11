@@ -7,7 +7,7 @@ const CollectionMenu = ({
   addNewCollection,
   getCardsForCollection,
   openCardContainer,
-  setCollectionData,
+  setActiveCollectionData,
 }) => {
   const allCollections = collections.map((collection, i) => (
     <Collection
@@ -15,7 +15,7 @@ const CollectionMenu = ({
       collection={collection}
       getCardsForCollection={getCardsForCollection}
       openCardContainer={openCardContainer}
-      setCollectionData={setCollectionData}
+      setActiveCollectionData={setActiveCollectionData}
     />
   ));
 

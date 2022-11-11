@@ -2,7 +2,7 @@ import AddNewCollectionForm from "../CollectionMenu/AddNewCollectionForm/AddNewC
 import CardViewer from "./CardViewer/CardViewer";
 import Card from "./Card/Card";
 
-const CardContainer = ({ cards, createNewCard, deleteCard }) => {
+const CardContainer = ({ cards, setShowCardForm, setCardFormTitle }) => {
   const allCards = cards.map(
     (cardObj, i, a) => (
       (i += 1),
@@ -12,8 +12,8 @@ const CardContainer = ({ cards, createNewCard, deleteCard }) => {
           i={i}
           a={a}
           cardData={cardObj}
-          createNewCard={createNewCard}
-          deleteCard={deleteCard}
+          setShowCardForm={setShowCardForm}
+          setCardFormTitle={setCardFormTitle}
         />
       )
     )
@@ -21,7 +21,7 @@ const CardContainer = ({ cards, createNewCard, deleteCard }) => {
 
   return cards ? (
     <div>
-      <CardViewer allCards={allCards} createNewCard={createNewCard} />
+      <CardViewer allCards={allCards} />
     </div>
   ) : (
     <div>Select your Collection to Study from!!</div>
