@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CardViewer = ({ allCards }) => {
+const CardViewer = ({ allCards, cards }) => {
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    setIndex(0);
+  }, [cards]);
 
   const handleNext = () => {
     if (index < allCards.length - 1) setIndex(index + 1);

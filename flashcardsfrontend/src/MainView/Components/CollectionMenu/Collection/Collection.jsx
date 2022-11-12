@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 const Collection = ({
   collection,
-  getCardsForCollection,
   openCardContainer,
   setActiveCollectionData,
 }) => {

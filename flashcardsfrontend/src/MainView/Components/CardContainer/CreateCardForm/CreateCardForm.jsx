@@ -1,14 +1,22 @@
-import React, { useState } from "react";
-import Modal from "../../Modal/Modal.jsx";
+import React, { useEffect, useState } from "react";
 
-const createCardTemplate = {
-  word: "",
-  definition: "",
-};
+const CreateCardForm = ({ createNewCard, setShowCardForm, cardFormTitle, activeCardData }) => {
+  const [word, setWord] = useState('');
+  const [definition, setDefinition] = useState('');
+  const [placeholder, setPlaceholder] = useState([]);
 
-const CreateCardForm = ({ createNewCard, setShowCardForm }) => {
-  const [word, setWord] = useState(createNewCard.word);
-  const [definition, setDefinition] = useState(createNewCard.definition);
+  useEffect(() => {
+    if(cardFormTitle === 'New Card') 
+        setPlaceholder({
+            word: 'Word on Card',
+            definition: 'Description of Word',
+    });
+    else if(cardFormTitle === 'Edit Card')
+        setPlaceholder({
+            word: activeCardData.word,
+            definition: activeCardData.definition
+        });
+  }, []);
 
   function handleSave(e) {
     // e.preventDefault();
@@ -18,8 +26,6 @@ const CreateCardForm = ({ createNewCard, setShowCardForm }) => {
     };
     createNewCard(newCard);
     setShowCardForm(false);
-    // setWord("");
-    // setDefinition("");
   }
 
   const handleWord = (e) => setWord(e.target.value);
@@ -31,7 +37,7 @@ const CreateCardForm = ({ createNewCard, setShowCardForm }) => {
       <div>
         <input
           type="text"
-          placeholder="Word on Card"
+          placeholder={placeholder.word}
           value={word}
           onChange={handleWord}
         />
@@ -39,7 +45,7 @@ const CreateCardForm = ({ createNewCard, setShowCardForm }) => {
       <div>
         <input
           type="text"
-          placeholder="Description of Word"
+          placeholder={placeholder.definition}
           value={definition}
           onChange={handleDefinition}
         />
