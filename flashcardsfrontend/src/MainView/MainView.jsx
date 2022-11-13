@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardContainer from "./Components/CardContainer/CardContainer";
-import CollectionMenu from "./Components/CollectionMenu/CollectionMenu";
 import CreateCardForm from "./Components/CardContainer/CreateCardForm/CreateCardForm";
 import Modal from "./Components/Modal/Modal";
 import Header from "./Components/Header/Header";
+import './MainView.css'
 
 const MainView = ({}) => {
   const [collections, setCollections] = useState([]);
@@ -64,11 +64,14 @@ const MainView = ({}) => {
   // }
 
   return (
-    <div>
+    <div className="main-view">
       <Header
         collections={collections}
+        setShowCardForm={setShowCardForm}
+        setCardFormTitle={setCardFormTitle}
         addNewCollection={addNewCollection}
         setActiveCollectionData={setActiveCollectionData}
+        activeCollectionData={activeCollectionData}
       />
       <CardContainer
         cards={cards}

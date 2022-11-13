@@ -1,11 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const cardTemplate = {
-  word: "",
-  definition: "",
-};
-
 const Card = ({
   i,
   a,
@@ -15,7 +10,7 @@ const Card = ({
   setActiveCardData,
   getCardsForCollection,
 }) => {
-  const [display, setDisplay] = useState(cardData.word);
+  const [display, setDisplay] = useState([]);
 
   useEffect(() => {
     setDisplay(cardData.word);
@@ -28,12 +23,6 @@ const Card = ({
     } else {
       setDisplay(cardData.word);
     }
-  }
-
-  function handleAddCard() {
-    setShowCardForm(true);
-    setCardFormTitle("New Card");
-    <button onClick={handleAddCard}>Add New Card</button>
   }
 
   function handleEditCard() {

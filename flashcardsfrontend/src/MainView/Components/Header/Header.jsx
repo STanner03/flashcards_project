@@ -3,9 +3,13 @@ import "./Header.css";
 
 const Header = ({
   collections,
+  setShowCardForm,
+  setCardFormTitle,
+
   addNewCollection,
   openCardContainer,
   setActiveCollectionData,
+  activeCollectionData,
 }) => {
   return (
     <header>
@@ -15,8 +19,11 @@ const Header = ({
       </div>
       <DropdownMenu
         collections={collections}
+        setShowCardForm={setShowCardForm}
+        setCardFormTitle={setCardFormTitle}
         addNewCollection={addNewCollection}
         setActiveCollectionData={setActiveCollectionData}
+        activeCollectionData={activeCollectionData}
       />
     </header>
   );
