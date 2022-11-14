@@ -19,6 +19,7 @@ const MainView = ({}) => {
   const [cardFormTitle, setCardFormTitle] = useState("");
   const [show, setShow] = useState(true);
   const [showContainer, setShowContainer] = useState(false);
+  const [fileType, setFileType] = useState("collection");
 
   useEffect(() => {
     getAllCollections();
@@ -65,6 +66,7 @@ const MainView = ({}) => {
   return (
     <div className="main-view">
       <Header
+        setShow={setShow}
         collections={collections}
         setShowCardForm={setShowCardForm}
         setShowContainer={setShowContainer}
@@ -76,6 +78,8 @@ const MainView = ({}) => {
       {showContainer ? (
         <CardContainer
           cards={cards}
+          setShow={setShow}
+          setFileType={setFileType}
           setShowCardForm={setShowCardForm}
           setCardFormTitle={setCardFormTitle}
           setActiveCardData={setActiveCardData}
@@ -99,8 +103,13 @@ const MainView = ({}) => {
             getCardsForCollection={getCardsForCollection}
           />
         ) : (
-          <DeleteAffirmationForm 
-          setShowCardForm={setShowCardForm}
+          <DeleteAffirmationForm
+            fileType={fileType}
+            activeCardData={activeCardData}
+            activeCollectionData={activeCollectionData}
+            setShowCardForm={setShowCardForm}
+            getCardsForCollection={getCardsForCollection}
+            getAllCollections={getAllCollections}
           />
         )}
       </Modal>

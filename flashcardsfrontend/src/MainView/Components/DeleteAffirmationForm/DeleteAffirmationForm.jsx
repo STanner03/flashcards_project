@@ -1,26 +1,35 @@
 import axios from "axios";
-import { useState } from "react";
 import "./DeleteAffirmationForm.css";
 
-const DeleteAffirmationForm = ({ setShowCardForm }) => {
-
-  const [fileType, setFileType] = useState("collection")
-
+const DeleteAffirmationForm = ({
+  fileType,
+  activeCardData,
+  activeCollectionData,
+  setShowCardForm,
+  getCardsForCollection,
+  getAllCollections,
+}) => {
   const handleCancel = () => setShowCardForm(false);
 
   async function handleDelete() {
-    if(fileType === 'card') {
-    let response = await axios.delete(
-      "http://127.0.0.1:8000/api/collections/" + activeCollectionData?.id + "/cards/" + cardData?.id + "/"
-    );
-    getCardsForCollection();
+    if (fileType === "card") {
+      let response = await axios.delete(
+        "http://127.0.0.1:8000/api/collections/" +
+          activeCollectionData?.id +
+          "/cards/" +
+          activeCardData?.id +
+          "/"
+      );
+      getCardsForCollection();
+    } else if (fileType === "collection") {
+      let response = await axios.delete(
+        "http://127.0.0.1:8000/api/collections/" + activeCollectionData?.id
+      );
+      getAllCollections()
     }
-    else if (fileType === 'collection') {
-      let response = await axios.delete("http://127.0.0.1:8000/api/collections/" + activeCollectionData?.id)
-    }
+    setShowCardForm(false);
+
   }
-
-
 
   return (
     <div className="form-bg">

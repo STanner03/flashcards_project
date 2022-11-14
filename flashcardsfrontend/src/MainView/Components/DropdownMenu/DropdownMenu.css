@@ -13,6 +13,7 @@
     height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 .sel-col {
@@ -21,4 +22,5 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   cursor: pointer;
 }

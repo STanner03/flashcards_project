@@ -6,3 +6,19 @@
     background-color: #519A5D;
 }
 
+.header-delete-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+.header-btn:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}

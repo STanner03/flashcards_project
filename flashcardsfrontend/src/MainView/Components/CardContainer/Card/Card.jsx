@@ -6,7 +6,9 @@ import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 const Card = ({
   i,
   a,
+  setShow,
   cardData,
+  setFileType,
   setShowCardForm,
   setCardFormTitle,
   setActiveCardData,
@@ -34,6 +36,10 @@ const Card = ({
   }
 
   function handleDeleteCard() {
+    setShowCardForm(true);
+    setShow(false);
+    setFileType("card")
+
   }
 
   return (

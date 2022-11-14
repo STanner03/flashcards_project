@@ -1,11 +1,12 @@
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
+import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 import "./Header.css";
 
 const Header = ({
+  setShow,
   collections,
   setShowCardForm,
   setCardFormTitle,
-
   addNewCollection,
   setShowContainer,
   setActiveCollectionData,
@@ -18,6 +19,7 @@ const Header = ({
         <h2>cards</h2>
       </div>
       <DropdownMenu
+        setShow={setShow}
         collections={collections}
         setShowCardForm={setShowCardForm}
         setShowContainer={setShowContainer}
@@ -26,6 +28,11 @@ const Header = ({
         setActiveCollectionData={setActiveCollectionData}
         activeCollectionData={activeCollectionData}
       />
+      <div className="header-delete-btn">
+        <button className="header-btn">
+          <DeleteForeverTwoToneIcon /> Collection
+        </button>
+      </div>
     </header>
   );
 };

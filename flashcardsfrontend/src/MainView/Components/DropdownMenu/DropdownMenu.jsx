@@ -5,6 +5,7 @@ import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
 
 const DropdownMenu = ({
+  setShow,
   collections,
   setShowCardForm,
   setCardFormTitle,
@@ -21,6 +22,7 @@ const DropdownMenu = ({
   };
 
   function handleAddCard() {
+    setShow(true);
     setShowCardForm(true);
     setCardFormTitle("New Card");
   }

@@ -4,6 +4,8 @@ import "./CardContainer.css";
 
 const CardContainer = ({
   cards,
+  setShow,
+  setFileType,
   setShowCardForm,
   setCardFormTitle,
   setActiveCardData,
@@ -18,7 +20,9 @@ const CardContainer = ({
           key={i}
           i={i}
           a={a}
+          setShow={setShow}
           cardData={cardData}
+          setFileType={setFileType}
           setShowCardForm={setShowCardForm}
           setCardFormTitle={setCardFormTitle}
           setActiveCardData={setActiveCardData}
