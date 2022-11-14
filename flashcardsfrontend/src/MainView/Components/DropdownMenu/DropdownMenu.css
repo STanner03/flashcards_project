@@ -1,4 +1,5 @@
 .drp-dn-menu {
+    position: fixed;
     align-items: flex-start;
     justify-content: left;
     background-color: #ffffff;
@@ -7,8 +8,11 @@
 }
 
 .btn-stl {
+    font-size: medium;
     width: 150px;
-    height: 30px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .sel-col {

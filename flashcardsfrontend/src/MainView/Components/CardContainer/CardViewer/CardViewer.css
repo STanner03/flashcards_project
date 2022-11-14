@@ -1,0 +1,18 @@
+.viewer-spc {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+.viewer-btn {
+    background-color: #F8EF2C;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.viewer-btn:hover {
+    cursor: pointer;
+}

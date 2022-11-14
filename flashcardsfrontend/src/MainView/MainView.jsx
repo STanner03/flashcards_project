@@ -4,7 +4,7 @@ import CardContainer from "./Components/CardContainer/CardContainer";
 import CreateCardForm from "./Components/CardContainer/CreateCardForm/CreateCardForm";
 import Modal from "./Components/Modal/Modal";
 import Header from "./Components/Header/Header";
-import './MainView.css'
+import "./MainView.css";
 
 const MainView = ({}) => {
   const [collections, setCollections] = useState([]);
@@ -16,6 +16,7 @@ const MainView = ({}) => {
   const [activeCardData, setActiveCardData] = useState([]);
   const [showCardForm, setShowCardForm] = useState(false);
   const [cardFormTitle, setCardFormTitle] = useState("");
+  const [showContainer, setShowContainer] = useState(false);
 
   useEffect(() => {
     getAllCollections();
@@ -59,27 +60,32 @@ const MainView = ({}) => {
   }
   const handleClose = () => setShowCardForm(false);
 
-  // function openCardContainer() {
-  //   <CardContainer cards={cards} />;
-  // }
-
   return (
     <div className="main-view">
       <Header
         collections={collections}
         setShowCardForm={setShowCardForm}
+        setShowContainer={setShowContainer}
         setCardFormTitle={setCardFormTitle}
         addNewCollection={addNewCollection}
         setActiveCollectionData={setActiveCollectionData}
         activeCollectionData={activeCollectionData}
       />
-      <CardContainer
-        cards={cards}
-        setShowCardForm={setShowCardForm}
-        setCardFormTitle={setCardFormTitle}
-        setActiveCardData={setActiveCardData}
-        getCardsForCollection={getCardsForCollection}
-      />
+      {showContainer ? (
+        <CardContainer
+          cards={cards}
+          setShowCardForm={setShowCardForm}
+          setCardFormTitle={setCardFormTitle}
+          setActiveCardData={setActiveCardData}
+          getCardsForCollection={getCardsForCollection}
+        />
+      ) : (
+        <div className="main-welcome">
+          <div>Select your</div>
+          <div>Collection to</div>
+          <div>Study!!</div>
+        </div>
+      )}
       <Modal show={showCardForm} onClose={handleClose} title={cardFormTitle}>
         <CreateCardForm
           createNewCard={createNewCard}

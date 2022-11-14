@@ -1,5 +1,6 @@
 import CardViewer from "./CardViewer/CardViewer";
 import Card from "./Card/Card";
+import "./CardContainer.css";
 
 const CardContainer = ({
   cards,
@@ -26,12 +27,10 @@ const CardContainer = ({
     )
   );
 
-  return cards ? (
-    <div>
+  return (
+    <div className="card-vwr-bg">
       <CardViewer allCards={allCards} cards={cards} />
     </div>
-  ) : (
-    <div>Select your Collection to Study from!!</div>
   );
 };
 

@@ -1,0 +1,45 @@
+.form-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input-word {
+    width: 80%;
+    height: 20px;
+    margin: 10px;
+}
+
+.form-input-definition {
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.cancel-btn {
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.save-btn {
+    border: none;
+    color: white;
+    background-color: #0596D4;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

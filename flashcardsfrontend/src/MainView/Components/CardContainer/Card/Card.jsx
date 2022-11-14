@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./Card.css";
+import EditTwoToneIcon from "@mui/icons-material/EditTwoTone";
+import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 
 const Card = ({
   i,
@@ -35,17 +38,22 @@ const Card = ({
       let response = await axios.delete(
         "http://127.0.0.1:8000/api/collections/" + 5 + "/cards/" + 10 + "/"
       );
-      getCardsForCollection();    
+      getCardsForCollection();
     }
   }
 
   return (
-    <div>
-      <button onClick={handleEditCard}>Edit Card</button>
-      <button onClick={handleDeleteCard}>Delete</button>
-      <div onClick={handleClick}>
-        {display}
-        <div>
+    <div onClick={handleClick}>
+      <div className="card-container">
+        <div className="card-header">
+          <EditTwoToneIcon className="card-edit-btn" onClick={handleEditCard} />
+          <DeleteForeverTwoToneIcon
+            className="card-edit-btn"
+            onClick={handleDeleteCard}
+          />
+        </div>
+        <div className="card-content">{display}</div>
+        <div className="card_index">
           {i} of {a.length}
         </div>
       </div>

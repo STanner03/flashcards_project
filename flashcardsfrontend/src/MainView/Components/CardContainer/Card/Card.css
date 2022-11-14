@@ -1,0 +1,31 @@
+.card-container {
+    background-color: #E9EDB7;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 500px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-edit-btn:hover {
+    cursor: pointer;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 95;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.card_index {
+    display: flex;
+    justify-content: center;
+}

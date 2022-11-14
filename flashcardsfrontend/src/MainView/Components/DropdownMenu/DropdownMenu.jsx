@@ -1,13 +1,15 @@
 import { useState } from "react";
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
 import "./DropdownMenu.css";
+import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
+import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
 
 const DropdownMenu = ({
   collections,
   setShowCardForm,
   setCardFormTitle,
   addNewCollection,
-  openCardContainer,
+  setShowContainer,
   setActiveCollectionData,
   activeCollectionData,
 }) => {
@@ -27,6 +29,7 @@ const DropdownMenu = ({
     <div className="drp-dn-menu">
       <button className="btn-stl" onClick={handleOpen}>
         Collections
+        {open ? <ArrowDropUpTwoToneIcon /> : <ArrowDropDownTwoToneIcon />}
       </button>
       {open ? (
         <div>
@@ -34,6 +37,7 @@ const DropdownMenu = ({
             setOpen={setOpen}
             setOpen2={setOpen2}
             collections={collections}
+            setShowContainer={setShowContainer}
             addNewCollection={addNewCollection}
             setActiveCollectionData={setActiveCollectionData}
           />

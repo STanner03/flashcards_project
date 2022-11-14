@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./CardViewer.css";
 
 const CardViewer = ({ allCards, cards }) => {
   const [index, setIndex] = useState(0);
@@ -19,10 +20,16 @@ const CardViewer = ({ allCards, cards }) => {
   };
 
   return (
-    <div>
+    <div className="card-vwr">
       {allCards[index]}
-      <button onClick={handlePrev}>Prev</button>
-      <button onClick={handleNext}>Next</button>
+      <div className="viewer-spc">
+        <button className="viewer-btn" onClick={handlePrev}>
+          Prev
+        </button>
+        <button className="viewer-btn" onClick={handleNext}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };

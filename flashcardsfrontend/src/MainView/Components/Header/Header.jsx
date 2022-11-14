@@ -7,7 +7,7 @@ const Header = ({
   setCardFormTitle,
 
   addNewCollection,
-  openCardContainer,
+  setShowContainer,
   setActiveCollectionData,
   activeCollectionData,
 }) => {
@@ -20,6 +20,7 @@ const Header = ({
       <DropdownMenu
         collections={collections}
         setShowCardForm={setShowCardForm}
+        setShowContainer={setShowContainer}
         setCardFormTitle={setCardFormTitle}
         addNewCollection={addNewCollection}
         setActiveCollectionData={setActiveCollectionData}

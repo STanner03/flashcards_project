@@ -1,17 +1,17 @@
-import './Collection.css'
+import "./Collection.css";
 
 const Collection = ({
   setOpen,
   setOpen2,
   collection,
-  openCardContainer,
+  setShowContainer,
   setActiveCollectionData,
 }) => {
   function handleClick() {
     setActiveCollectionData(collection);
     setOpen2(true);
     setOpen(false);
-    // openCardContainer();
+    setShowContainer(true);
   }
 
   return (
