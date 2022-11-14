@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CreateCardForm.css";
 
 const CreateCardForm = ({
+  editCard,
   createNewCard,
   setShowCardForm,
   cardFormTitle,
@@ -11,18 +12,24 @@ const CreateCardForm = ({
   const [word, setWord] = useState("");
   const [definition, setDefinition] = useState("");
   const [placeholder, setPlaceholder] = useState([]);
+  const [cardType, setCardType] = useState("")
+
 
   useEffect(() => {
-    if (cardFormTitle === "New Card")
+    if (cardFormTitle === "New Card") {
       setPlaceholder({
         word: "Word on Card",
         definition: "Description of Word",
-      });
-    else if (cardFormTitle === "Edit Card")
+      })
+      setCardType("New")
+    }
+    else if (cardFormTitle === "Edit Card") {
       setPlaceholder({
         word: activeCardData.word,
         definition: activeCardData.definition,
-      });
+      })
+      setCardType("Edit")
+    };
   }, []);
 
   function handleSave(e) {
@@ -30,7 +37,12 @@ const CreateCardForm = ({
       word: word,
       definition: definition,
     };
-    createNewCard(newCard);
+    if (cardType === "New") {
+      createNewCard(newCard);
+    }
+    else if (cardType === "Edit"){
+      editCard(newCard)
+    }
     setShowCardForm(false);
     getCardsForCollection();
 

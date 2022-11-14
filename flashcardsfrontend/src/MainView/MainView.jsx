@@ -65,6 +65,14 @@ const MainView = ({}) => {
     setCards(...cards, newCard);
     getCardsForCollection();
   }
+
+  async function editCard(newCard) {
+    let response = await axios.put("http://127.0.0.1:8000/api/collections/" +
+    activeCollectionData?.id + "/cards/" + activeCardData.id + "/", newCard
+    );
+    getCardsForCollection();
+  }
+
   const handleClose = () => setShowCardForm(false);
 
   return (
@@ -111,6 +119,7 @@ const MainView = ({}) => {
       <Modal show={showCardForm} onClose={handleClose} title={cardFormTitle}>
         {show ? (
           <CreateCardForm
+          editCard={editCard}
             createNewCard={createNewCard}
             setShowCardForm={setShowCardForm}
             cardFormTitle={cardFormTitle}
