@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardContainer from "./Components/CardContainer/CardContainer";
-import CreateCardForm from "./Components/CardContainer/CreateCardForm/CreateCardForm";
+import CreateCardForm from "./Components/CreateCardForm/CreateCardForm";
 import Modal from "./Components/Modal/Modal";
 import Header from "./Components/Header/Header";
 import "./MainView.css";
 import DeleteAffirmationForm from "./Components/DeleteAffirmationForm/DeleteAffirmationForm";
-import AddNewCollectionForm from "./Components/CollectionMenu/AddNewCollectionForm/AddNewCollectionForm";
+import AddNewCollectionForm from "./Components/AddNewCollectionForm/AddNewCollectionForm";
 
 const MainView = ({}) => {
   const [collections, setCollections] = useState([]);
@@ -79,6 +79,7 @@ const MainView = ({}) => {
     <div className="main-view">
       <Header
         setShow={setShow}
+        setFileType={setFileType}
         collections={collections}
         setShowCardForm={setShowCardForm}
         setShowContainer={setShowContainer}

@@ -36,8 +36,7 @@ const Card = ({
   function handleDeleteCard() {
     setShowCardForm(true);
     setShow(false);
-    setFileType("card")
-
+    setFileType("card");
   }
 
   return (

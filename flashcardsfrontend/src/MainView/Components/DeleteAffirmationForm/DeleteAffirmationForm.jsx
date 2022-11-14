@@ -22,7 +22,9 @@ const DeleteAffirmationForm = ({
       getCardsForCollection();
     } else if (fileType === "collection") {
       let response = await axios.delete(
-        "http://127.0.0.1:8000/api/collections/" + activeCollectionData?.id + "/"
+        "http://127.0.0.1:8000/api/collections/" +
+          activeCollectionData?.id +
+          "/"
       );
       getAllCollections();
     }

@@ -1,5 +1,4 @@
 import Collection from "./Collection/Collection";
-import AddNewCollectionForm from "./AddNewCollectionForm/AddNewCollectionForm";
 
 const CollectionMenu = ({
   setOpen,

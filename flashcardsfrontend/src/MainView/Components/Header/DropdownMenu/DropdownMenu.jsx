@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CollectionMenu from "../CollectionMenu/CollectionMenu";
+import CollectionMenu from "./CollectionMenu/CollectionMenu.jsx";
 import "./DropdownMenu.css";
 import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
@@ -7,6 +7,7 @@ import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 
 const DropdownMenu = ({
   setShow,
+  setFileType,
   collections,
   setShowCardForm,
   setCardFormTitle,
@@ -32,6 +33,7 @@ const DropdownMenu = ({
   const handleDelete = () => {
     setShowCardForm(true);
     setShow(false);
+    setFileType("collection")
   };
 
   return (

@@ -1,8 +1,9 @@
-import DropdownMenu from "../DropdownMenu/DropdownMenu";
+import DropdownMenu from "./DropdownMenu/DropdownMenu.jsx";
 import "./Header.css";
 
 const Header = ({
   setShow,
+  setFileType,
   collections,
   setShowCardForm,
   setCardFormTitle,
@@ -20,6 +21,7 @@ const Header = ({
       </div>
       <DropdownMenu
         setShow={setShow}
+        setFileType={setFileType}
         collections={collections}
         setShowCardForm={setShowCardForm}
         setShowContainer={setShowContainer}
