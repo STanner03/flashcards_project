@@ -1,0 +1,27 @@
+.del-form-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.del-form-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.del-form-btn {
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.del-form-btn:hover{
+    cursor: pointer;
+    color: black;
+}

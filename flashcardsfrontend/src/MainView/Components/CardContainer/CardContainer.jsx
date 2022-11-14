@@ -12,7 +12,7 @@ const CardContainer = ({
   getCardsForCollection,
   activeCollectionData
 }) => {
-  const allCards = cards.map(
+  const allCards = cards?.map(
     (cardData, i, a) => (
       (i += 1),
       (

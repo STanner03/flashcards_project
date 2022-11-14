@@ -50,6 +50,7 @@ const MainView = ({}) => {
         "/cards/"
     );
     setCards(response.data);
+    getAllCollections();
   }
 
   async function createNewCard(newCard) {
@@ -59,7 +60,8 @@ const MainView = ({}) => {
         "/cards/",
       newCard
     );
-    setCards(response.data);
+    setCards(...cards, newCard);
+    getAllCollections();
   }
   const handleClose = () => setShowCardForm(false);
 
