@@ -6,6 +6,7 @@ const CreateCardForm = ({
   setShowCardForm,
   cardFormTitle,
   activeCardData,
+  getCardsForCollection
 }) => {
   const [word, setWord] = useState("");
   const [definition, setDefinition] = useState("");
@@ -32,6 +33,8 @@ const CreateCardForm = ({
     };
     createNewCard(newCard);
     setShowCardForm(false);
+    getCardsForCollection();
+
   }
 
   const handleWord = (e) => setWord(e.target.value);

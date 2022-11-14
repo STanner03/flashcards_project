@@ -8,6 +8,7 @@ const CardContainer = ({
   setCardFormTitle,
   setActiveCardData,
   getCardsForCollection,
+  activeCollectionData
 }) => {
   const allCards = cards.map(
     (cardData, i, a) => (
@@ -22,6 +23,7 @@ const CardContainer = ({
           setCardFormTitle={setCardFormTitle}
           setActiveCardData={setActiveCardData}
           getCardsForCollection={getCardsForCollection}
+          activeCollectionData={activeCollectionData}
         />
       )
     )

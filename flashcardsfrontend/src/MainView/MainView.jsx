@@ -5,6 +5,7 @@ import CreateCardForm from "./Components/CardContainer/CreateCardForm/CreateCard
 import Modal from "./Components/Modal/Modal";
 import Header from "./Components/Header/Header";
 import "./MainView.css";
+import DeleteAffirmationForm from "./Components/DeleteAffirmationForm/DeleteAffirmationForm";
 
 const MainView = ({}) => {
   const [collections, setCollections] = useState([]);
@@ -16,6 +17,7 @@ const MainView = ({}) => {
   const [activeCardData, setActiveCardData] = useState([]);
   const [showCardForm, setShowCardForm] = useState(false);
   const [cardFormTitle, setCardFormTitle] = useState("");
+  const [show, setShow] = useState(true);
   const [showContainer, setShowContainer] = useState(false);
 
   useEffect(() => {
@@ -78,6 +80,7 @@ const MainView = ({}) => {
           setCardFormTitle={setCardFormTitle}
           setActiveCardData={setActiveCardData}
           getCardsForCollection={getCardsForCollection}
+          activeCollectionData={activeCollectionData}
         />
       ) : (
         <div className="main-welcome">
@@ -87,12 +90,19 @@ const MainView = ({}) => {
         </div>
       )}
       <Modal show={showCardForm} onClose={handleClose} title={cardFormTitle}>
-        <CreateCardForm
-          createNewCard={createNewCard}
+        {show ? (
+          <CreateCardForm
+            createNewCard={createNewCard}
+            setShowCardForm={setShowCardForm}
+            cardFormTitle={cardFormTitle}
+            activeCardData={activeCardData}
+            getCardsForCollection={getCardsForCollection}
+          />
+        ) : (
+          <DeleteAffirmationForm 
           setShowCardForm={setShowCardForm}
-          cardFormTitle={cardFormTitle}
-          activeCardData={activeCardData}
-        />
+          />
+        )}
       </Modal>
     </div>
   );

@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Card.css";
 import EditTwoToneIcon from "@mui/icons-material/EditTwoTone";
@@ -12,6 +11,7 @@ const Card = ({
   setCardFormTitle,
   setActiveCardData,
   getCardsForCollection,
+  activeCollectionData
 }) => {
   const [display, setDisplay] = useState([]);
 
@@ -34,12 +34,6 @@ const Card = ({
   }
 
   function handleDeleteCard() {
-    async function deleteCard() {
-      let response = await axios.delete(
-        "http://127.0.0.1:8000/api/collections/" + 5 + "/cards/" + 10 + "/"
-      );
-      getCardsForCollection();
-    }
   }
 
   return (
