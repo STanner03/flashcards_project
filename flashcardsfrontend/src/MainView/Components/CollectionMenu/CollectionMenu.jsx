@@ -6,8 +6,8 @@ const CollectionMenu = ({
   setOpen2,
   collections,
   setShowContainer,
-  addNewCollection,
   openCardContainer,
+  setAddCollectionShow,
   setActiveCollectionData,
 }) => {
   const allCollections = collections.map((collection, i) => (
@@ -23,7 +23,7 @@ const CollectionMenu = ({
   ));
 
   const handleNewCollection = () => {
-    <AddNewCollectionForm addNewCollection={addNewCollection} />;
+    setAddCollectionShow(true);
   };
 
   return (

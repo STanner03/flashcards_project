@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-const collectionTemplate = {
-    title: '',
-};
-
-const AddNewCollectionForm = ({ addNewCollection }) => {
+const AddNewCollectionForm = ({ addNewCollection, setAddCollectionShow }) => {
   const [title, setTitle] = useState("");
 
   const handleTitle = (e) => setTitle(e.target.value);
@@ -16,6 +12,7 @@ const AddNewCollectionForm = ({ addNewCollection }) => {
     };
     addNewCollection(newCollection);
     setTitle("");
+    setAddCollectionShow(false);
   }
 
   return (

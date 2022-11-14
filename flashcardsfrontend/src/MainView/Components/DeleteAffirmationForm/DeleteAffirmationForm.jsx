@@ -9,8 +9,6 @@ const DeleteAffirmationForm = ({
   getCardsForCollection,
   getAllCollections,
 }) => {
-  const handleCancel = () => setShowCardForm(false);
-
   async function handleDelete() {
     if (fileType === "card") {
       let response = await axios.delete(

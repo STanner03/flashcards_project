@@ -11,7 +11,6 @@ const CardViewer = ({ allCards, cards }) => {
   const handleNext = () => {
     if (index < allCards.length - 1) setIndex(index + 1);
     else setIndex(0);
-    console.log(index);
   };
 
   const handlePrev = () => {

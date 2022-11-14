@@ -6,6 +6,7 @@ import Modal from "./Components/Modal/Modal";
 import Header from "./Components/Header/Header";
 import "./MainView.css";
 import DeleteAffirmationForm from "./Components/DeleteAffirmationForm/DeleteAffirmationForm";
+import AddNewCollectionForm from "./Components/CollectionMenu/AddNewCollectionForm/AddNewCollectionForm";
 
 const MainView = ({}) => {
   const [collections, setCollections] = useState([]);
@@ -20,6 +21,7 @@ const MainView = ({}) => {
   const [show, setShow] = useState(true);
   const [showContainer, setShowContainer] = useState(false);
   const [fileType, setFileType] = useState("collection");
+  const [addCollectionShow, setAddCollectionShow] = useState(false);
 
   useEffect(() => {
     getAllCollections();
@@ -61,7 +63,7 @@ const MainView = ({}) => {
       newCard
     );
     setCards(...cards, newCard);
-    getAllCollections();
+    getCardsForCollection();
   }
   const handleClose = () => setShowCardForm(false);
 
@@ -76,6 +78,7 @@ const MainView = ({}) => {
         addNewCollection={addNewCollection}
         setActiveCollectionData={setActiveCollectionData}
         activeCollectionData={activeCollectionData}
+        setAddCollectionShow={setAddCollectionShow}
       />
       {showContainer ? (
         <CardContainer
@@ -95,6 +98,16 @@ const MainView = ({}) => {
           <div>Study!!</div>
         </div>
       )}
+      <Modal
+        show={addCollectionShow}
+        onClose={handleClose}
+        title={"Add New Collection"}
+      >
+        <AddNewCollectionForm
+          addNewCollection={addNewCollection}
+          setAddCollectionShow={setAddCollectionShow}
+        />
+      </Modal>
       <Modal show={showCardForm} onClose={handleClose} title={cardFormTitle}>
         {show ? (
           <CreateCardForm

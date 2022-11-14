@@ -10,7 +10,7 @@ const CardContainer = ({
   setCardFormTitle,
   setActiveCardData,
   getCardsForCollection,
-  activeCollectionData
+  activeCollectionData,
 }) => {
   const allCards = cards?.map(
     (cardData, i, a) => (

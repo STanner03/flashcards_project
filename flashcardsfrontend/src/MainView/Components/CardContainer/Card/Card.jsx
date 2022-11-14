@@ -12,8 +12,6 @@ const Card = ({
   setShowCardForm,
   setCardFormTitle,
   setActiveCardData,
-  getCardsForCollection,
-  activeCollectionData
 }) => {
   const [display, setDisplay] = useState([]);
 

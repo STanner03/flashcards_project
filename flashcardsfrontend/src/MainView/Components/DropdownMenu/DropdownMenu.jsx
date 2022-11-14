@@ -5,7 +5,6 @@ import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
 import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 
-
 const DropdownMenu = ({
   setShow,
   collections,
@@ -15,6 +14,7 @@ const DropdownMenu = ({
   setShowContainer,
   setActiveCollectionData,
   activeCollectionData,
+  setAddCollectionShow,
 }) => {
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -32,7 +32,7 @@ const DropdownMenu = ({
   const handleDelete = () => {
     setShowCardForm(true);
     setShow(false);
-  }
+  };
 
   return (
     <div className="drp-dn-menu">
@@ -48,6 +48,7 @@ const DropdownMenu = ({
             collections={collections}
             setShowContainer={setShowContainer}
             addNewCollection={addNewCollection}
+            setAddCollectionShow={setAddCollectionShow}
             setActiveCollectionData={setActiveCollectionData}
           />
         </div>

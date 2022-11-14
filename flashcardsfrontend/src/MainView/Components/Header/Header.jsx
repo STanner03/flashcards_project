@@ -10,8 +10,8 @@ const Header = ({
   setShowContainer,
   setActiveCollectionData,
   activeCollectionData,
+  setAddCollectionShow,
 }) => {
-
   return (
     <header>
       <div className="header">
@@ -27,6 +27,7 @@ const Header = ({
         addNewCollection={addNewCollection}
         setActiveCollectionData={setActiveCollectionData}
         activeCollectionData={activeCollectionData}
+        setAddCollectionShow={setAddCollectionShow}
       />
     </header>
   );
