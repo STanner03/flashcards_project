@@ -3,6 +3,8 @@ import CollectionMenu from "../CollectionMenu/CollectionMenu";
 import "./DropdownMenu.css";
 import ArrowDropDownTwoToneIcon from "@mui/icons-material/ArrowDropDownTwoTone";
 import ArrowDropUpTwoToneIcon from "@mui/icons-material/ArrowDropUpTwoTone";
+import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
+
 
 const DropdownMenu = ({
   setShow,
@@ -27,6 +29,11 @@ const DropdownMenu = ({
     setCardFormTitle("New Card");
   }
 
+  const handleDelete = () => {
+    setShowCardForm(true);
+    setShow(false);
+  }
+
   return (
     <div className="drp-dn-menu">
       <button className="btn-stl" onClick={handleOpen}>
@@ -49,6 +56,9 @@ const DropdownMenu = ({
           {open2 ? (
             <div>
               <div className="sel-col">{activeCollectionData.title}</div>
+              <button className="del-btn" onClick={handleDelete}>
+                <DeleteForeverTwoToneIcon /> Collection
+              </button>
               <button className="btn-stl" onClick={handleAddCard}>
                 Add New Card
               </button>

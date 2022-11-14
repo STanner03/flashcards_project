@@ -26,7 +26,6 @@ const CreateCardForm = ({
   }, []);
 
   function handleSave(e) {
-    // e.preventDefault();
     let newCard = {
       word: word,
       definition: definition,

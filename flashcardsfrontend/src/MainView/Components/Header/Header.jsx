@@ -1,5 +1,4 @@
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
-import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 import "./Header.css";
 
 const Header = ({
@@ -12,6 +11,7 @@ const Header = ({
   setActiveCollectionData,
   activeCollectionData,
 }) => {
+
   return (
     <header>
       <div className="header">
@@ -28,11 +28,6 @@ const Header = ({
         setActiveCollectionData={setActiveCollectionData}
         activeCollectionData={activeCollectionData}
       />
-      <div className="header-delete-btn">
-        <button className="header-btn">
-          <DeleteForeverTwoToneIcon /> Collection
-        </button>
-      </div>
     </header>
   );
 };

@@ -24,3 +24,17 @@
    justify-content: center;
    cursor: pointer;
 }
+
+.del-btn {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    width: 150px;
+    height: 30px;
+}
+
+.del-btn:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
